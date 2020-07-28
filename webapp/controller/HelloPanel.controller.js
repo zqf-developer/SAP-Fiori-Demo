@@ -1,9 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sap/m/MessageBox",
-	"sap/ui/core/Fragment"
-], function(Controller,MessageToast, MessageBox,Fragment) {
+	"sap/m/MessageBox"
+], function(Controller, MessageToast, MessageBox) {
 	"use strict";
 	return Controller.extend("sap.ui.demo.zqf.controller.HelloPanel", {
 		onShowHello: function() {
@@ -19,33 +18,36 @@ sap.ui.define([
 					title: "My message box title",
 					actions: [MessageBox.Action.YES, MessageBox.Action.NO],
 					emphasizedAction: MessageBox.Action.YES,
-					onClose: function (oAction) { 
+					onClose: function(oAction) {
 						MessageToast.show("Action selected: " + oAction);
 					}
 				});
 		},
-		onOpenDialog : function () {
-			var oView = this.getView();
-
-			// create dialog lazily
-			if (!this.byId("helloDialog")) {
-				// load asynchronous XML fragment
-				Fragment.load({
-					id: oView.getId(),
-					name: "sap.ui.demo.zqf.view.HelloDialog",
-					controller: this
-				}).then(function (oDialog) {
-					// connect dialog to the root view of this component (models, lifecycle)
-					oView.addDependent(oDialog);
-					oDialog.open();
-				});
-			} else {
-				this.byId("helloDialog").open();
+		onOpenDialog: function() {
+				this.getOwnerComponent().openHelloDialog();
 			}
-		},
-		//关闭
-		onCloseDialog : function () {
-			this.byId("helloDialog").close();
-		}
+			// onOpenDialog : function () {
+			// 	var oView = this.getView();
+
+		// 	// create dialog lazily
+		// 	if (!this.byId("helloDialog")) {
+		// 		// load asynchronous XML fragment
+		// 		Fragment.load({
+		// 			id: oView.getId(),
+		// 			name: "sap.ui.demo.zqf.view.HelloDialog",
+		// 			controller: this
+		// 		}).then(function (oDialog) {
+		// 			// connect dialog to the root view of this component (models, lifecycle)
+		// 			oView.addDependent(oDialog);
+		// 			oDialog.open();
+		// 		});
+		// 	} else {
+		// 		this.byId("helloDialog").open();
+		// 	}
+		// },
+		// //关闭
+		// onCloseDialog : function () {
+		// 	this.byId("helloDialog").close();
+		// }
 	});
 });

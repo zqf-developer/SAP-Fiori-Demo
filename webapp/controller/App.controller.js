@@ -4,15 +4,19 @@ sap.ui.define([
 	function(Controller) {
 		"use strict";
 		return Controller.extend("sap.ui.demo.zqf.controller.App", {
-			// onInit: function() {
-			// 	// set data model on view
-			// 	var oData = {
-			// 		recipient: {
-			// 			name: "World"
-			// 		}
-			// 	};
-			// 	var oModel = new JSONModel(oData);
-			// 	this.getView().setModel(oModel);
+
+			onOpenDialog: function() {
+					this.getOwnerComponent().openHelloDialog();
+				}
+				// onInit: function() {
+				// 	// set data model on view
+				// 	var oData = {
+				// 		recipient: {
+				// 			name: "World"
+				// 		}
+				// 	};
+				// 	var oModel = new JSONModel(oData);
+				// 	this.getView().setModel(oModel);
 
 			// 	// set i18n model on view
 			// 	var i18nModel = new ResourceModel({
