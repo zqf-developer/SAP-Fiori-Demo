@@ -37,3 +37,12 @@ Step 17: Fragment Callbacks  https://sapui5.hana.ondemand.com/#/topic/354f98ed2b
 Step 18: Icons  https://sapui5.hana.ondemand.com/#/topic/776f7352807e4f82b18176c8fbdc0c56
 
 Step 19: Reuse Dialogs  https://sapui5.hana.ondemand.com/#/topic/19453962b8074b7399372c65cbe05370
+
+Step 20: Aggregation Binding  https://sapui5.hana.ondemand.com/#/topic/bf71375454654b44af01379a3c3a6273
+
+Step 21: Data Types  https://sapui5.hana.ondemand.com/#/topic/dfe04650afc046e0802abb1a1a90d2d9
+
+
+
+
+
